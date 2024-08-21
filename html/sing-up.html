@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입  by JS</title>
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+
+    <header>
+        <nav class="nav-container">
+
+            <div class="nav-item">
+                <span class="menu-link">게시판</span>
+            </div>
+
+            <div class="nav-item">
+                <span class="menu-link">로그인</span>
+                <span class="menu-link">회원가입</span>
+            </div>
+
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+        <!-- 회원가입 제목 영역-->
+        <section class="form-title">
+            <h1>회원가입 by JS</h1>
+        </section>
+
+        <!-- 회원가입 폼 영역 -->
+        <section>
+            <form action="" onsubmit="return false;">
+                <table>
+
+                    <tr>
+                        <th>아이디</th>
+                        <td>
+                            <input type="text" class="inputs" placeholder="아이디를 입력하세요" value="tenco1">
+                            <button type="button" id="checkIdBtn" class="btn-small">중복확인</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>닉네임</th>
+                        <td>
+                            <input type="text" class="inputs" placeholder="닉네임을 입력하세요" value="둘리1">
+                        </td>
+                    </tr> 
+
+                    <tr>
+                        <th>비밀번호</th>
+                        <td>
+                            <input type="password" class="inputs" placeholder="비밀번호를 입력하세요" value="1234">
+                        </td>
+                        </tr> 
+
+                    <tr>
+                        <th>비밀번호 확인</th>
+                        <td>
+                            <input type="password" class="inputs" placeholder="비밀번호를 입력하세요" value="1234">
+                        </td>
+                    </tr> 
+                </table>
+
+                <div class="btn-area">
+                    <button type="button" id="singUpBtn" class="btn">회원가입</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- 
+        JS 파일은 하단에 두는 것이 일반적이다.
+        모든 HTML 요소가 로드된 후에 스크립트를 실행하기 위함이고
+        페이지 로드 속도를 최적화 하는데 도움이 된다.  
+    -->
+    <script src="../js/header.js"></script>
+    <script src="../js/singUp.js"></script>
+</body>
+</html>

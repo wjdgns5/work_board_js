@@ -1,0 +1,105 @@
+/* 기본 스타일 설정 */
+/* 모든 요소에 일관되게 box-sizing 을 적용 */
+
+*,
+*::before
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+    align-content: center;
+    flex wrap 속성을 사용하여 여러 줄로 구성된 경우 사용한다.
+
+     align-items: center;
+     flex wrap 속성을 사용하여 한 줄로 구성된 경우 사용한다.
+*/
+
+.form-title h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+
+/*
+     border-collapse: collapse; 속성
+     collapse
+     CSS 에서 테이블에 셀 간 테두리를 어떻게 처리할 지 결정하는 속성
+     테두리가 중복되는 것을 방지하거나 각 셀의 테두리를 따로 유지할지 설정 할 수 있습니다.
+*/
+
+table {
+    width: 100%;
+    margin: 0;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 10px;
+}
+
+section {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+/*  인풋 스타일 설정 */
+.inputs {
+    width: calc(100% - 22px);
+    height: 40px;
+    border: none;
+    padding: 5px 10px;
+}
+
+.btn {
+    font-size: 14px;
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    background-color: brown;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-small {
+    font-size: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    color: white;
+    background-color: green;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-area {
+    display: flex;
+    justify-content: right;
+    margin: 20px 0;
+}
+

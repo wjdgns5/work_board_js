@@ -58,9 +58,66 @@ function checkDuplicatedId() {
 
 }
 
+// 회원가입 처리 함수
+function registerUser() {
+    // alert('회원가입 버튼 동작 테스트');
+    const username = inputs[0];
+    const nickname = inputs[1];
+    const password = inputs[2];
+    const confirmPassword = inputs[3];
+    console.log("username.readOnly : " + username.readOnly);
+
+
+// 유효성 검사
+if(username.readOnly == false) {
+    alert("아이디 중복 확인을 해 주세요.");
+    username.focus();
+    return;
+}
+
+if(nickname.value.trim() === "") {
+    alert("닉네임을 입력하세요.");
+    nickname.focus();
+    return;
+}
+
+if(password.value.trim() === "") {
+    alert("비밀번호를 입력하세요");
+    password.focus();
+    return;
+}
+
+if(password.value !== confirmPassword.value) {
+    alert("비밀번호가 일치하지 않습니다.");
+    password.focus();
+    return;
+}
+
+// 새로운 사용자 정보를 객체 리터럴로 생성
+const newUser = { 
+    username: username.value,
+    nickname: nickname.value,
+    password: password.value,
+    createdAt: toDay.getFullYear() + "." + (toDay.getMonth() + 1 ) +"." +toDay.getDate()
+ };
+// console.log("newUser : " + newUser);
+// console.log("newUser : " + JSON.stringify(newUser)); 
+
+// [ {}, {}, {} ]
+userInfo.push(newUser); // 자바
+
+// 로컬 스토리지에 자료구조 통으로 덮어쓰기 저장
+localStorage.setItem("userList", JSON.stringify(userInfo));
+
+
+// window.location.href = "sign-in.html";
+
+}
+
 // 이벤트 리스너 등록 처리
 function addEventListener() {
     checkIdBtn.addEventListener('click', checkDuplicatedId);
+    singUpBtn.addEventListener('click', registerUser);
 }
 
 // 이벤트 리스너 함수 실행 (호출)

@@ -30,7 +30,8 @@ body {
      flex wrap 속성을 사용하여 한 줄로 구성된 경우 사용한다.
 */
 
-.form-title h1 {
+.form-title h1,
+.title-box h1 {
     font-size: 24px;
     text-align: center;
     margin-bottom: 20px;

@@ -110,7 +110,7 @@ userInfo.push(newUser); // 자바
 localStorage.setItem("userList", JSON.stringify(userInfo));
 
 
-// window.location.href = "sign-in.html";
+ window.location.href = "sign-in.html";
 
 }
 

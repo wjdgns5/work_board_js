@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 목록</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/boardList.css">
+</head>
+<body>
+        <!-- 헤더 세션과 네비 영역-->
+         <header>
+            <nav class="nav-container">
+
+                <div class="nav-item">
+                    <span class="menu-link" id="board">게시판</span>
+                </div>
+                
+                <div class="nav-item" id="authLinks">
+                    <span class="menu-link" id="signIn">로그인</span>
+                    <span class="menu-link" id="signUp">회원가입</span>
+                </div>
+
+            </nav>
+         </header>
+
+         <main class="content-wrapper">
+
+            <section class="title-box">
+                <h1>게시글 상세보기 By JS</h1>
+            </section>
+
+                <div class="content-box">
+                    <div class="head">
+                        <div class="head-1">번호</div>
+                        <div class="head-2">제목</div>
+                        <div class="head-3">작성자</div>
+                        <div class="head-4">작성일</div>
+                        <div class="head-5">조회수</div>
+                    </div>
+
+                    <div class="board-content-box">
+                        <!-- 삭제 예정 : js 코드로 반복문을 활용해서 동적으로 컨텐트 만든다. -->
+
+                        <!-- <div class="board">
+                            <div class="board-1">1</div>
+                            <div class="board-2">후미진 어느 언덕에서 JS</div>
+                            <div class="board-3">둘리</div>
+                            <div class="board-4">2024.08.26</div>
+                            <div class="board-5">11</div>
+                        </div> -->
+                    </div>
+
+
+                    <!-- 페이지 영역-->
+                     <div class="botton-box">
+
+                        <div class="page-box">
+                            <span class="left">◀</span>
+                            <div class="num-box">
+                                <span class="num">1</span>
+                            </div>
+                            <span class="right">▶</span>
+                        </div>
+
+                        <div class="write-button-box">
+                            <button type="button" class="btn">글쓰기</button>
+                        </div>
+                     </div>
+                </div>
+
+         </main>
+
+         <script src="../js/header.js"></script>
+
+         <script src="../js/boardList.js"></script>
+
+</body>
+</html>

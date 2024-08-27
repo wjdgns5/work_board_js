@@ -1,0 +1,65 @@
+.content-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.board-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.head, 
+.board {
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+/* 제목, content 공각 영역 맞추기  */
+.head-1, 
+.board-1 {
+    /* flex 속성 (고정 너비) */
+    flex: 0 0 80px;
+}
+
+.head-2,
+.board-2 {
+    /* 가변 너비 */
+    flex: 1;  
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.head-3,
+.board-3,
+.head-4,
+.board-4,
+.head-5, 
+.board-5
+{
+    /* 고정 너비 */
+    flex: 0 0 100px;
+}
+
+/* 하단 영역 */
+.button-box{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+} 
+
+.page-box {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.write-button-box {
+    display: flex;
+    justify-content: flex-end;
+}

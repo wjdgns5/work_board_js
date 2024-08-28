@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/boardWrite.css">
+</head>
+<body>
+    <h1>글쓰기 화면</h1>
+
+    <header>
+        <nav class="nav-container">
+
+            <div class="nav-item">
+                <span class="menu-link" id="board">게시판</span>
+            </div>
+            
+            <div class="nav-item" id="authLinks">
+                <span class="menu-link" id="signIn">로그인</span>
+                <span class="menu-link" id="signUp">회원가입</span>
+            </div>
+
+        </nav>
+     </header>
+
+     <main class="content-wrapper">
+        <section class="form-title">
+            <h1>글쓰기 by JS</h1>
+        </section>
+
+        <section>
+            <table>
+                <tr>
+                    <th>제목</th>
+                    <td>
+                        <input type="text" class="inputs title">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>작성자</th>
+                    <td>
+                        <input type="text" class="inputs username" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>첨부파일</th>
+                    <td>
+                        <input type="file" class="file" accept="image/*" > 
+                        <!-- 이미지 파일만 받을 수 있도록 설정  accept="image/*" -->
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>내용</th>
+                    <td>
+                        <div class="img-box">이미지 미리보기</div>
+                        <textarea name="" id="" class="content"></textarea>
+                    </td>
+                </tr>
+
+            </table>
+
+            <div class="btn-area">
+                <button type="button" class="btn">글쓰기</button>
+            </div>
+
+        </section>
+
+     </main>
+
+     <script src="../js/header.js"></script>
+         <script src="../js/boardWrite.js"></script>
+
+</body>
+</html>

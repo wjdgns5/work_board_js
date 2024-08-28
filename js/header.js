@@ -1,6 +1,8 @@
 // DOMContentLoaded 이벤트를 사용해 보자.
 
 window.document.addEventListener('DOMContentLoaded', function() {
+
+
     // DOM 요소를 가져오기
     const boardMenu = window.document.getElementById('board');    
     const signInMenu = window.document.getElementById('signIn');    
@@ -44,5 +46,14 @@ window.document.addEventListener('DOMContentLoaded', function() {
             window.location.href = 'sign-up.html'; 
         });
     }
-
 });
+
+// 로그인 상태가 아니면 지정된 페이지로 리다이렉션 
+function redirectToPageIfNotLoggedIn(page) {
+    // 로컬 스토리지 접근 - user key 값 여부 확인
+    const loggedInUser = localStorage.getItem('user');
+    if(loggedInUser == null) {
+        location.href = `${page}.html`;
+    }
+
+}

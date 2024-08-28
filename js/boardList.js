@@ -103,6 +103,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             boardContainer.innerHTML = postElements; // 게시글 컨테이너에 HTML 추가
 
+            // 동적으로 생성한 rows 들 전체를 함수로 전달 시킴
+            const postElementsCollection = document.querySelectorAll('.board');
+            postClickListeners(postElementsCollection);
+
+
             // 페이지 네이션 생성하기
             createPagination(storedBoardList, page);
 
@@ -147,14 +152,77 @@ document.addEventListener('DOMContentLoaded', function() {
                 loadPosts(targetPageNumber);
             });
         });
-     
+        // 해당 row 게시글을 눌렀을 경우 --> 상세보기 화면 이동 처리
+    }
+
+    // 하나의 게시글 클릭 시 상세보기 화면 이동 처리
+    // function postClickListeners(postElements) {
+    //     console.log("게시글 클릭?");
+    //     for(let i = 0; i < postElements.length; i++) {
+    //         postElements[i].onclick = function() {
+    //            const postId = postElements[i].getAttribute('data-id');
+    //            increaseViewCount(storedBoardList, postId); // 조회수 증가 
+    //             // 상세보기 화면 설계
+    //             location.href = `board-detail.html?id=${postId}`;
+    //         }
+    //     }
+    // }
+
+   // 하나의 게시글 클릭 시 상세보기 화면 이동 처리 - async, await 활용
+    function postClickListeners(postElements) {
+        console.log("게시글 클릭?");
+        for(let i = 0; i < postElements.length; i++) {
+            postElements[i].onclick = async function() {
+               const postId = postElements[i].getAttribute('data-id');
+               await increaseViewCount(storedBoardList, postId); // 조회수 증가 
+                // 상세보기 화면 설계
+                location.href = `board-detail.html?id=${postId}`;
+            }
+        }
+    }
+
+    // // 조회수 증가 로직 만들기  -- 1단계
+    // function increaseViewCount(boardList, postId) {
+    //     for(let i=0; i< boardList.length; i++) {
+    //         if(boardList[i].id === parseInt(postId)) { // 데이터 타입까지 완벽하게 일치해야 한다.
+    //             boardList[i].count += 1;
+    //             break;
+    //         }
+    //     }
+    //     // boardList.reverse() 가 없으면 상세보기 보고 난 후 다시 리스트가 뒤바뀜
+    //     // 스파게티 코드 발생 유발할 수 있음
+    //     localStorage.setItem("boardList", JSON.stringify(boardList.reverse() ));
+
+    // }
+
+    // 조회수 증가 로직 만들기  -- 2단계  - 통신을 통한 로직이라고 가정
+    function increaseViewCount(boardList, postId) {
+        return new Promise((resolve) => {
+            setTimeout(()=> {
+
+                for(let i=0; i< boardList.length; i++) {
+                    if(boardList[i].id === parseInt(postId)) { // 데이터 타입까지 완벽하게 일치해야 한다.
+                        boardList[i].count += 1;
+                        break;
+                    }
+                }
+
+        // boardList.reverse() 가 없으면 상세보기 보고 난 후 다시 리스트가 뒤바뀜
+        // 스파게티 코드 발생 유발할 수 있음
+        localStorage.setItem("boardList", JSON.stringify(boardList.reverse() ));
+
+        // 작업 완료 후 resolve(); 호출
+        resolve();
+        alert('조회수 증가 후 상세보기 화면 이동');
+            }, 2000); // 2초 딜레이
+        }); // 비 동기 시작
+      
+    
+    }
+
+
         // 글쓰기 버튼 눌렀을 경우 --> 글쓰기 페이지 이동 처리
         writeButton.onclick = function() {
             location.href = "board-write.html";
         }
-
-
-        // 해당 row 게시글을 눌렀을 경우 --> 상세보기 화면 이동 처리
-        
-    }
 });
